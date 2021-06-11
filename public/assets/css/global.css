@@ -1,0 +1,11 @@
+/* COLOURS */
+:root {
+    --primary-color: #413EEB;
+    --secondary-color: #D376DA;
+}
+
+
+/* SHADOWS */
+.shadow-sm { 
+    box-shadow:  0 .125rem .25rem rgba(0,0,0, .075) !important;
+}

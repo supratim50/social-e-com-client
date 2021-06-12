@@ -1,11 +1,15 @@
-/* COLOURS */
-:root {
-    --primary-color: #413EEB;
-    --secondary-color: #D376DA;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+/* COLOURS */
+:root {
+  --primary-color: #413eeb;
+  --secondary-color: #d376da;
+}
 
 /* SHADOWS */
-.shadow-sm { 
-    box-shadow:  0 .125rem .25rem rgba(0,0,0, .075) !important;
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }

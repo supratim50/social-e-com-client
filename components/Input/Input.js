@@ -1,17 +1,12 @@
 const Input = ({ placeholder, classList }) => {
   return (
     <>
-      <input
-        className={`input py-3 px-3 border-0 shadow-sm ${classList && classList}`}
-        placeholder={placeholder}
-      />
-
-      <style jsx>{`
-        .input {
-          width: 98%;
-          max-width: 339px;
-        }
-      `}</style>
+      <div className="w-100 shadow-sm rounded-sm">
+        <input
+          className={`w-100 py-3 px-3 border-0 ${classList && classList}`}
+          placeholder={placeholder}
+        />
+      </div>
     </>
   );
 };

@@ -1,0 +1,19 @@
+.logo {
+  background-image: var(--primary-gradient);
+  font-size: 36px;
+  font-family: "Pattaya", sans-serif;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.profile {
+  &_box {
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+  }
+
+  &_img {
+    object-fit: cover;
+  }
+}

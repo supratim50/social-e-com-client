@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
 
 * {
   margin: 0;
@@ -10,11 +11,31 @@
 :root {
   --primary-color: #413eeb;
   --secondary-color: #d376da;
+  --primary-gradient: linear-gradient(
+    to right,
+    var(--primary-color) 8%,
+    var(--secondary-color)
+  );
 }
 
-/* SHADOWS */
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+.primary-text {
+  color: var(--primary-color) !important;
+}
+
+.secondary-text {
+  color: var(--secondary-color) !important;
+}
+
+.heading-text {
+  color: #2b1057 !important;
+}
+
+.paragraph-text {
+  color: #747474 !important;
+}
+
+.paragraph-sm-text {
+  color: #a4a4a4 !important;
 }
 
 /* FONT */
@@ -26,4 +47,15 @@
 }
 .paragraph-sm {
   font-size: 14px !important;
+}
+
+/* BOOTSTRAP CSS */
+.rounded-sm {
+  border-radius: 0.25rem !important;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }

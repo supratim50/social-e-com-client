@@ -1,6 +1,9 @@
-// import Head from "next/head";
-// import Image from "next/image";
+import Topbar from "../components/Navbar/Topbar/Topbar";
 
 export default function Home() {
-  return <>this is home page</>;
+  return (
+    <>
+      <Topbar />
+    </>
+  );
 }

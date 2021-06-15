@@ -53,6 +53,9 @@
 .rounded-sm {
   border-radius: 0.25rem !important;
 }
+.rounded-md {
+  border-radius: 10px !important;
+}
 .overflow-hidden {
   overflow: hidden !important;
 }

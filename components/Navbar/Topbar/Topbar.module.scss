@@ -17,3 +17,37 @@
     object-fit: cover;
   }
 }
+
+.icon {
+  font-size: 23px;
+
+  &_search {
+    color: #bababa;
+  }
+}
+
+.search_box {
+  background-color: #f5f5f5;
+  transition: 0.5s ease;
+}
+
+.input {
+  background: none;
+  color: #7e7e7e;
+  width: 0;
+  transition: 0.5s ease;
+
+  &::placeholder {
+    color: #bababa;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &_active {
+    width: 100%;
+    max-width: 300px;
+    padding: 0 8px;
+    margin-left: 8px;
+  }
+}

@@ -10,7 +10,7 @@ const Topbar = () => {
   const [active, setActive] = useState(false);
 
   const setActiveFunc = () => {
-    setActive(!active);
+    setActive(true);
   };
 
   return (

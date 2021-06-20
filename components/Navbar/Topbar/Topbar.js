@@ -16,7 +16,7 @@ const Topbar = () => {
   return (
     <>
       <div
-        className={`px-5 py-3 d-flex justify-content-between align-items-center shadow-sm`}
+        className={`bg-white px-5 py-3 d-flex justify-content-between align-items-center shadow-sm`}
       >
         {/* logo */}
         <div className={`${style.logo}`}>Social-e-com</div>
@@ -24,7 +24,9 @@ const Topbar = () => {
         <div className="d-flex justify-content-between align-items-center">
           {/* SEARCH BOX */}
           <div
-            className={`px-3 d-flex align-items-center rounded-md ${style.search_box}`}
+            className={`px-3 d-flex align-items-center rounded-md ${
+              style.search_box
+            } ${active ? style.search_box_active : ""}`}
             onClick={setActiveFunc}
           >
             <div
@@ -43,7 +45,7 @@ const Topbar = () => {
           </div>
           {/* USER NOTIFICATION */}
           <div
-            className={`p-3 d-flex align-items-center ml-2 ${style.icon} ${style.notification}`}
+            className={`p-3 d-flex align-items-center ${style.icon} ${style.notification}`}
           >
             <FaBell />
           </div>

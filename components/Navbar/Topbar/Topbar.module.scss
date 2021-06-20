@@ -27,8 +27,11 @@
 }
 
 .search_box {
-  background-color: #f5f5f5;
   transition: 0.5s ease;
+
+  &_active {
+    background-color: #f5f5f5;
+  }
 }
 
 .input {
@@ -45,8 +48,7 @@
   }
 
   &_active {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     padding: 0 8px;
     margin-left: 8px;
   }

@@ -18,6 +18,23 @@
   );
 }
 
+/* HEADINGS */
+.heading-primary {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #5e3eeb;
+}
+
+.heading-secondary {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #2b1057;
+}
+
+/* TEXTS */
+
 .primary-text {
   color: var(--primary-color) !important;
 }
@@ -61,4 +78,7 @@
 }
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+.flex-fill {
+  flex: 1 !important;
 }

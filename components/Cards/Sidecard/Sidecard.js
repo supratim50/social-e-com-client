@@ -2,9 +2,13 @@ import FollowersList from "../../Listview/ProfileListview/ProfileListview";
 
 import style from "./Sidecard.module.scss";
 
-const Sidecard = () => {
+const Sidecard = ({ className }) => {
   return (
-    <div className={`${style.sidecard} bg-white mt-4 p-4 mr-3`}>
+    <div
+      className={`${style.sidecard} ${
+        className && className
+      } bg-white w-100 p-4`}
+    >
       <div>
         <p className={`heading-primary`}>Followers</p>
       </div>

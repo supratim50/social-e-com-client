@@ -19,7 +19,8 @@ export default function Home() {
 
       <style jsx>{`
         section {
-          height: 100vh;
+          /* height: 100vh; */
+          margin-top: 95px;
           background-color: #fafafa;
         }
 

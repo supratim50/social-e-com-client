@@ -10,7 +10,8 @@ export default function Home() {
       <Sidenav />
       <div className="postcard_box mt-4 row">
         <div className="col-8">
-          <Postcard />
+          <Postcard classList="mb-3" />
+          <Postcard classList="mb-3" />
         </div>
         <div className="sidecard col-4 d-flex justify-content-start p-0">
           <Sidecard />

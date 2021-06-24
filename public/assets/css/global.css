@@ -66,6 +66,11 @@
   font-size: 14px !important;
 }
 
+/* BACKGROUND */
+.bg-light_grey {
+  background-color: #dddddd !important;
+}
+
 /* BOOTSTRAP CSS */
 .rounded-sm {
   border-radius: 0.25rem !important;

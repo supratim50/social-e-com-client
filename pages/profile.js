@@ -1,4 +1,5 @@
 import SquareButton from "../components/Buttons/SquareButton/SquareButton";
+import SmallCard from "../components/Cards/SmallCards/SmallCard";
 
 // followers component
 const Counting = ({ number, text }) => {
@@ -26,7 +27,34 @@ const profile = () => {
             <SquareButton />
           </div>
           {/* posts section */}
-          <div className="w-100 mt-3 border">this is posts section</div>
+          <div className="w-100 mt-3 border row mx-auto">
+            <div className="col-4 px-1">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+            <div className="col-4 px-1">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+              />
+            </div>
+            <div className="col-4 px-1">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+          </div>
         </div>
         {/* profile section */}
         <div className="profile bg-white rounded-md px-3 py-4">

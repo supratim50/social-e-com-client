@@ -1,11 +1,16 @@
 .profile {
-    &_box {
-      width: 62px;
-      height: 62px;
-      border-radius: 10px;
-    }
-  
-    &_img {
-      object-fit: cover;
+  &_box {
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+
+    &__small {
+      width: 50px !important;
+      height: 50px !important;
     }
   }
+
+  &_img {
+    object-fit: cover;
+  }
+}

@@ -72,6 +72,9 @@
 .paragraph-sm {
   font-size: 14px !important;
 }
+.paragraph-xs {
+  font-size: 13px !important;
+}
 
 /* BACKGROUND */
 .bg-light_grey {

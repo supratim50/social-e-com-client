@@ -27,8 +27,8 @@ const profile = () => {
             <SquareButton />
           </div>
           {/* posts section */}
-          <div className="w-100 mt-3 border row mx-auto">
-            <div className="col-4 px-1">
+          <div className="w-100 mt-1 row mx-auto">
+            <div className="col-4 px-1 mt-2">
               <SmallCard
                 name="John Watson"
                 date="12 hours ago"
@@ -37,15 +37,52 @@ const profile = () => {
                 caption="Social media are interactive Web 2.0 Internet-based applications."
               />
             </div>
-            <div className="col-4 px-1">
+            <div className="col-4 px-1 mt-2">
               <SmallCard
                 name="John Watson"
                 date="12 hours ago"
                 profileImage="/assets/images/profile.jpg"
                 images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
               />
             </div>
-            <div className="col-4 px-1">
+            <div className="col-4 px-1 mt-2">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+            <div className="col-4 px-1 mt-2">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+            <div className="col-4 px-1 mt-2">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+            <div className="col-4 px-1 mt-2">
+              <SmallCard
+                name="John Watson"
+                date="12 hours ago"
+                profileImage="/assets/images/profile.jpg"
+                images="/assets/images/productOne.png"
+                caption="Social media are interactive Web 2.0 Internet-based applications."
+              />
+            </div>
+            <div className="col-4 px-1 mt-2">
               <SmallCard
                 name="John Watson"
                 date="12 hours ago"
@@ -95,7 +132,6 @@ const profile = () => {
 
       <style jsx>{`
         section {
-          height: 100vh;
           margin-top: 95px;
           background-color: #fafafa;
         }

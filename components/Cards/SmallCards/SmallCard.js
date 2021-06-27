@@ -1,9 +1,9 @@
-import profile from "../../../pages/profile";
 import Profile from "../../Profile/Profile";
+import PostImageTwo from "../../Images/PostImages/PostImageTwo";
 
 const SmallCard = ({ name, date, profileImage, images, caption }) => {
   return (
-    <div className="card_body p-3 bg-white rounded-md">
+    <div className="card_body p-3 bg-white rounded-md d-flex flex-column justify-content-between">
       <Profile
         profileImage={profileImage && profileImage}
         name={name && name}
@@ -11,10 +11,14 @@ const SmallCard = ({ name, date, profileImage, images, caption }) => {
         small
       />
       {caption ? (
-        <p className="paragraph-sm paragraph-text mt-3">{caption}</p>
+        <div className="mt-3">
+          <p className="paragraph-xs paragraph-text text-truncate mb-0">
+            {caption}
+          </p>
+        </div>
       ) : null}
 
-      <div className="image-box overflow-hidden rounded-md w-100 mt-3">
+      <div className="image-box overflow-hidden rounded-md w-100 mt-3 flex-fill">
         <img src={images && images} className="image w-100 h-100" />
       </div>
       <p className="paragraph-sm paragraph-text mb-0 mt-2">
@@ -22,6 +26,10 @@ const SmallCard = ({ name, date, profileImage, images, caption }) => {
         &nbsp;and 59 others
       </p>
       <style jsx>{`
+        .card_body {
+          height: 350px;
+        }
+
         .image-box {
           height: 198px;
         }

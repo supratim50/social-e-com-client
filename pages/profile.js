@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+// component
 import SquareButton from "../components/Buttons/SquareButton/SquareButton";
 import SmallCard from "../components/Cards/SmallCards/SmallCard";
 
@@ -15,6 +19,22 @@ const Counting = ({ number, text }) => {
 
 // profile
 const profile = () => {
+  const [posts, setPosts] = useState([]);
+
+  // FETCH DATA
+  useEffect(() => {
+    const ENDPOINT = "http://localhost:4000";
+
+    const getPosts = async () => {
+      const posts = await axios.get(`${ENDPOINT}/post`);
+      setPosts(posts.data);
+    };
+
+    getPosts();
+  }, []);
+
+  // console.log(posts);
+
   return (
     <section className="overflow-hidden">
       <div className="profile-box row mt-4">
@@ -28,69 +48,22 @@ const profile = () => {
           </div>
           {/* posts section */}
           <div className="w-100 mt-1 row mx-auto">
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
-            <div className="col-4 px-1 mt-2">
-              <SmallCard
-                name="John Watson"
-                date="12 hours ago"
-                profileImage="/assets/images/profile.jpg"
-                images="/assets/images/productOne.png"
-                caption="Social media are interactive Web 2.0 Internet-based applications."
-              />
-            </div>
+            {/* POST GET DATA */}
+            {posts.map((post) => {
+              console.log(post);
+
+              return (
+                <div className="col-4 px-1 mt-2">
+                  <SmallCard
+                    name="John Watson"
+                    date="12 hours ago"
+                    profileImage="/assets/images/profile.jpg"
+                    images="/assets/images/productOne.png"
+                    caption="Social media are interactive Web 2.0 Internet-based applications."
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         {/* profile section */}

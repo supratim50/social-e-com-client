@@ -19,7 +19,9 @@ const SmallCard = ({ name, date, profileImage, images, caption }) => {
       ) : null}
 
       <div className="image-box overflow-hidden rounded-md w-100 mt-3 flex-fill">
-        <img src={images && images} className="image w-100 h-100" />
+        {images.map(({ image }) => {
+          return <img src={image} className="image w-100 h-100" />;
+        })}
       </div>
       <p className="paragraph-sm paragraph-text mb-0 mt-2">
         <span className="heading-text font-weight-bold">Mr. John</span>

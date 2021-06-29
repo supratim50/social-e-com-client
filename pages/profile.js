@@ -49,8 +49,8 @@ const profile = () => {
           {/* posts section */}
           <div className="w-100 mt-1 row mx-auto">
             {/* POST GET DATA */}
-            {posts.map((post) => {
-              console.log(post);
+            {posts.map(({ likes, images, title }) => {
+              console.log(likes, images, title);
 
               return (
                 <div className="col-4 px-1 mt-2">
@@ -58,8 +58,8 @@ const profile = () => {
                     name="John Watson"
                     date="12 hours ago"
                     profileImage="/assets/images/profile.jpg"
-                    images="/assets/images/productOne.png"
-                    caption="Social media are interactive Web 2.0 Internet-based applications."
+                    images={images}
+                    caption={title}
                   />
                 </div>
               );

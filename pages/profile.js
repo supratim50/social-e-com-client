@@ -4,6 +4,9 @@ import axios from "axios";
 // component
 import SquareButton from "../components/Buttons/SquareButton/SquareButton";
 import SmallCard from "../components/Cards/SmallCards/SmallCard";
+import Modal from "../components/modals/PostsModals/PostsModal";
+
+// import { getProfile } from "../api/getProfileById";
 
 // followers component
 const Counting = ({ number, text }) => {
@@ -20,11 +23,11 @@ const Counting = ({ number, text }) => {
 // profile
 const profile = () => {
   const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState({});
+  const ENDPOINT = "http://localhost:4000";
 
   // FETCH DATA
   useEffect(() => {
-    const ENDPOINT = "http://localhost:4000";
-
     const getPosts = async () => {
       const posts = await axios.get(`${ENDPOINT}/post`);
       setPosts(posts.data);
@@ -32,8 +35,6 @@ const profile = () => {
 
     getPosts();
   }, []);
-
-  // console.log(posts);
 
   return (
     <section className="overflow-hidden">
@@ -49,13 +50,24 @@ const profile = () => {
           {/* posts section */}
           <div className="w-100 mt-1 row mx-auto">
             {/* POST GET DATA */}
-            {posts.map(({ likes, images, title }) => {
-              console.log(likes, images, title);
+            {posts.map(({ images, title, userEmail }) => {
+              // console.log(likes, images, title, _id);
+
+              // getProfile(userID);
+              axios
+                .get(`${ENDPOINT}/user/supratim@gmail.com`)
+                .then(({ data }) => {
+                  setUser(data);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
 
               return (
                 <div className="col-4 px-1 mt-2">
                   <SmallCard
-                    name="John Watson"
+                    // key={_id}
+                    name={user.name}
                     date="12 hours ago"
                     profileImage="/assets/images/profile.jpg"
                     images={images}
@@ -102,6 +114,8 @@ const profile = () => {
           </div>
         </div>
       </div>
+
+      <Modal />
 
       <style jsx>{`
         section {

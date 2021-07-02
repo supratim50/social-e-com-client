@@ -1,7 +1,14 @@
 import Profile from "../../Profile/Profile";
 import PostImageTwo from "../../Images/PostImages/PostImageTwo";
 
-const SmallCard = ({ name, date, profileImage, images, caption }) => {
+const SmallCard = ({
+  name,
+  date,
+  profileImage,
+  images,
+  caption,
+  showModal,
+}) => {
   return (
     <div className="card_body p-3 bg-white rounded-md d-flex flex-column justify-content-between">
       <Profile
@@ -11,14 +18,17 @@ const SmallCard = ({ name, date, profileImage, images, caption }) => {
         small
       />
       {caption ? (
-        <div className="mt-3">
+        <div className="mt-3" onClick={showModal && showModal}>
           <p className="paragraph-xs paragraph-text text-truncate mb-0">
             {caption}
           </p>
         </div>
       ) : null}
 
-      <div className="image-box overflow-hidden rounded-md w-100 mt-3 flex-fill">
+      <div
+        onClick={showModal && showModal}
+        className="image-box overflow-hidden rounded-md w-100 mt-3 flex-fill"
+      >
         {images.map(({ image }) => {
           return <img src={image} className="image w-100 h-100" />;
         })}

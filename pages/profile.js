@@ -24,6 +24,13 @@ const Counting = ({ number, text }) => {
 const profile = () => {
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState({});
+  const [show, setShow] = useState(false);
+
+  // SHOW MODAL FUNCTION
+  const showFunc = () => {
+    setShow(!show);
+  };
+
   const ENDPOINT = "http://localhost:4000";
 
   // FETCH DATA
@@ -72,6 +79,7 @@ const profile = () => {
                     profileImage="/assets/images/profile.jpg"
                     images={images}
                     caption={title}
+                    showModal={showFunc}
                   />
                 </div>
               );
@@ -115,7 +123,8 @@ const profile = () => {
         </div>
       </div>
 
-      <Modal />
+      {/* SHOW MADAL */}
+      {show ? <Modal show showFunction={showFunc} /> : <Modal />}
 
       <style jsx>{`
         section {

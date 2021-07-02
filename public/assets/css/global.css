@@ -60,6 +60,9 @@
 }
 
 /* FONT */
+.heading-lg {
+  font-size: 36px !important;
+}
 .heading {
   font-size: 24px !important;
 }

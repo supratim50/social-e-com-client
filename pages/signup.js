@@ -1,10 +1,13 @@
 import Input from "../components/Input/Input";
 import PrimaryBtn from "../components/Buttons/PrimaryButton/PrimaryButton";
 
+//LAYOUTS
+import AuthLayout from "../components/Layouts/AuthLayout";
+
 // ICONS
 import { FaArrowRight } from "react-icons/fa";
 
-const signup = () => {
+const Signup = () => {
   return (
     <section className={`d-flex justify-content-center align-items-center`}>
       <div className="form-box">
@@ -38,4 +41,7 @@ const signup = () => {
   );
 };
 
-export default signup;
+// SET LAYOUTS
+Signup.Layout = AuthLayout;
+
+export default Signup;

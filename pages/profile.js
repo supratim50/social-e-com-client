@@ -93,15 +93,15 @@ const profile = () => {
             {/* profile image */}
             <div className="image-outside-box d-flex justify-content-center align-items-center">
               <div className="image_box bg-white d-flex justify-content-center align-items-center">
-                <img className="image" src="/assets/images/profile.jpg" />
+                <img className="image" src="/assets/images/poorCoders.png" />
               </div>
             </div>
             {/* name */}
             <h2 className="heading-secondary heading-text mt-2 mb-0">
-              John Watson
+              Supratim Mondal
             </h2>
             <p className="paragraph paragrph-text mt-1 mb-0">
-              joshepwatson@gmail.com
+              supratim05@gmail.com
             </p>
           </div>
           {/* profile details end */}

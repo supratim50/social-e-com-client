@@ -12,11 +12,10 @@ const Sidecard = ({ className }) => {
       <div>
         <p className={`heading-primary`}>Followers</p>
       </div>
-      <FollowersList name="Joshep Watson" image="profile.jpg" />
-      <FollowersList name="John Watson" image="profile.jpg" />
-      <FollowersList name="Joshep Watson" image="profile.jpg" />
-      <FollowersList name="Joshep Watson" image="profile.jpg" />
-      <FollowersList name="Joshep Watson" image="profile.jpg" />
+      <FollowersList name="Rumela Ganguly" image="profile.jpg" />
+      <FollowersList name="Rishov Mal" image="profile.jpg" />
+      <FollowersList name="Soumya Garang" image="profile.jpg" />
+      <FollowersList name="Supratim Mondal" image="profile.jpg" />
     </div>
   );
 };

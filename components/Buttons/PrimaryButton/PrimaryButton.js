@@ -1,8 +1,8 @@
-const PrimaryButton = () => {
+const PrimaryButton = ({ text }) => {
   return (
     <>
       <div className="button w-100 d-flex justify-content-center align-items-center py-3 px-5 paragraph-sm text-white mx-auto">
-        Sign In
+        {text && text}
       </div>
 
       <style jsx>{`

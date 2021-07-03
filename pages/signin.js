@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// COMPONENTS
+//COMPONENTS
 import Input from "../components/Input/Input";
 import PrimaryBtn from "../components/Buttons/PrimaryButton/PrimaryButton";
 
@@ -10,19 +10,18 @@ import AuthLayout from "../components/Layouts/AuthLayout";
 // ICONS
 import { FaArrowRight } from "react-icons/fa";
 
-const Signup = () => {
+const signin = () => {
   return (
     <section className={`d-flex justify-content-center align-items-center`}>
       <div className="form-box">
-        <h1 className="heading font-weight-normal">Sign Up</h1>
-        <Input type="text" placeholder="Name" classList="mt-4" />
+        <h1 className="heading font-weight-normal">Sign In</h1>
         <Input type="email" placeholder="Email" classList="mt-3" />
         <Input type="password" placeholder="Password" classList="mt-3" />
         {/* create account */}
-        <Link href="/signin">
+        <Link href="/signup">
           <a className="text-decoration-none">
-            <p className="paragraph-sm paragraph-text text-right mt-3">
-              I have an account{" "}
+            <p className="paragraph-sm text-right paragraph-text mt-3">
+              Create an account{" "}
               <i className="ml-2 primary-text">
                 <FaArrowRight />
               </i>
@@ -30,7 +29,7 @@ const Signup = () => {
           </a>
         </Link>
         {/* button */}
-        <PrimaryBtn text="Sign up" />
+        <PrimaryBtn text="Sign In" />
       </div>
 
       <style jsx>{`
@@ -49,6 +48,6 @@ const Signup = () => {
 };
 
 // SET LAYOUTS
-Signup.Layout = AuthLayout;
+signin.Layout = AuthLayout;
 
-export default Signup;
+export default signin;

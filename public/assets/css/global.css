@@ -85,6 +85,9 @@
 }
 
 /* BOOTSTRAP CSS */
+.text-decoration-none {
+  text-decoration: none !important;
+}
 .rounded-sm {
   border-radius: 0.25rem !important;
 }

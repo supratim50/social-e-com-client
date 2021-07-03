@@ -1,5 +1,6 @@
 import AuthLayout from "../components/Layouts/AuthLayout";
 import InterestList from "../components/Cards/InterestLIst/InterestList";
+import RoundButton from "../components/Buttons/RoundButton/RoundButton";
 
 //ICONS
 import {
@@ -11,6 +12,7 @@ import {
   FaMagic,
   FaSuitcase,
   FaBaby,
+  FaAngleRight,
 } from "react-icons/fa";
 
 const Interests = () => {
@@ -31,6 +33,7 @@ const Interests = () => {
                 icon={<FaShoppingBasket />}
                 classList="mb-4"
                 text="Grocery Items"
+                active
               />
               <InterestList
                 icon={<FaTshirt />}
@@ -71,6 +74,13 @@ const Interests = () => {
               />
             </div>
           </div>
+        </div>
+        {/* NEXT BUTTON */}
+        <div className="d-flex align-items-center justify-content-center my-4">
+          <RoundButton
+            icon={<FaAngleRight />}
+            classList="fixed-bottom-corner"
+          />
         </div>
       </section>
 

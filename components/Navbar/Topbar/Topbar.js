@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 //CSS
 import style from "./Topbar.module.scss";
@@ -19,7 +20,12 @@ const Topbar = () => {
         className={`fixed-top bg-white px-5 py-3 d-flex justify-content-between align-items-center shadow-sm`}
       >
         {/* logo */}
-        <div className={`${style.logo}`}>Social-e-com</div>
+        <Link href="/">
+          <a className="text-decoration-none">
+            <div className={`${style.logo}`}>Social-e-com</div>
+          </a>
+        </Link>
+
         {/* USER DETAILS */}
         <div className="d-flex justify-content-between align-items-center">
           {/* SEARCH BOX */}

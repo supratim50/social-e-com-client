@@ -1,7 +1,10 @@
-const PrimaryButton = ({ text }) => {
+const PrimaryButton = ({ text, registerFunc }) => {
   return (
     <>
-      <div className="button w-100 d-flex justify-content-center align-items-center py-3 px-5 paragraph-sm text-white mx-auto">
+      <div
+        className="button w-100 d-flex justify-content-center align-items-center py-3 px-5 paragraph-sm text-white mx-auto"
+        onClick={registerFunc}
+      >
         {text && text}
       </div>
 

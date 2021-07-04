@@ -1,9 +1,11 @@
 import Sidecard from "../components/Cards/Sidecard/Sidecard";
 import Postcard from "../components/Cards/Postcard/Postcard";
+import Sidenav from "../components/Navbar/Sidenav/Sidenav";
 
 export default function Home() {
   return (
     <>
+      <Sidenav active="home" />
       <section className="overflow-hidden container-fluid">
         <div className="postcard_box mt-4 row position-relative">
           <div className="col-8">

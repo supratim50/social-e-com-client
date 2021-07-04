@@ -18,7 +18,7 @@ const Profile = ({ classList, profileImage, name, date, small }) => {
       <div className="flex-fill ml-3">
         <h3
           className={`heading-text mb-0 ${
-            small ? "paragraph font-weight-bold" : "heading-secondary"
+            small ? "paragraph-sm font-weight-bold" : "heading-secondary"
           }`}
         >
           {name && name}

@@ -56,12 +56,16 @@ const Topbar = () => {
             <FaBell />
           </div>
           {/* USER IMAGE */}
-          <div className={`${style.profile_box} overflow-hidden ml-3`}>
-            <img
-              src="/assets/images/profile.jpg"
-              className={`w-100 h-100 ${style.profile_img}`}
-            />
-          </div>
+          <Link href="/profile">
+            <a>
+              <div className={`${style.profile_box} overflow-hidden ml-3`}>
+                <img
+                  src="/assets/images/profile.jpg"
+                  className={`w-100 h-100 ${style.profile_img}`}
+                />
+              </div>
+            </a>
+          </Link>
         </div>
       </div>
     </>

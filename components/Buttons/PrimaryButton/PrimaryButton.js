@@ -17,6 +17,8 @@ const PrimaryButton = ({ text, registerFunc }) => {
             var(--secondary-color)
           );
           max-width: 233px;
+
+          cursor: pointer;
         }
       `}</style>
     </>

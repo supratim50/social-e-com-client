@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -7,6 +7,9 @@ import axios from "axios";
 import Input from "../components/Input/Input";
 import PrimaryBtn from "../components/Buttons/PrimaryButton/PrimaryButton";
 
+// CONTEXTS
+import { ProfileContext } from "../contexts/profile-context";
+
 //LAYOUTS
 import AuthLayout from "../components/Layouts/AuthLayout";
 
@@ -14,6 +17,10 @@ import AuthLayout from "../components/Layouts/AuthLayout";
 import { FaArrowRight } from "react-icons/fa";
 
 const Signup = () => {
+  // profile context
+  const [state, dispatch] = useContext(ProfileContext);
+
+  // STATE
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
@@ -34,18 +41,29 @@ const Signup = () => {
     setEmail(e.target.value);
   };
 
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   // CONNECT BACKEND FOR REGISTER
   const registrationFunc = async () => {
     const EndPoint = "http://localhost:4000";
 
     try {
-      const userData = await axios.post(`${EndPoint}/user`, {
+      const { data } = await axios.post(`${EndPoint}/user`, {
         name,
         password,
         email,
       });
+
+      dispatch({
+        type: "SET-PROFILE",
+        name: data.user.name,
+        email: data.user.email,
+        token: data.token,
+      });
       //REDIRECT PAGE
-      router.push("/");
+      router.push("/uploadProfileImage");
     } catch (error) {
       console.log(error);
     }

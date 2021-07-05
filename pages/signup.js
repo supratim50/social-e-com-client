@@ -2,13 +2,14 @@ import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Cookie from "js-cookie";
 
 // COMPONENTS
 import Input from "../components/Input/Input";
 import PrimaryBtn from "../components/Buttons/PrimaryButton/PrimaryButton";
 
 // CONTEXTS
-import { ProfileContext } from "../contexts/profile-context";
+import { ProfileContext } from "../contexts/ProfileContext/profile-context";
 
 //LAYOUTS
 import AuthLayout from "../components/Layouts/AuthLayout";
@@ -62,6 +63,8 @@ const Signup = () => {
         email: data.user.email,
         token: data.token,
       });
+
+      Cookie.set("token", data.token);
       //REDIRECT PAGE
       router.push("/uploadProfileImage");
     } catch (error) {

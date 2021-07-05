@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 
 //CSS
@@ -7,8 +7,14 @@ import style from "./Topbar.module.scss";
 // ICONS
 import { FaBell, FaSearch } from "react-icons/fa";
 
+// CONTEXT
+import { ProfileContext } from "../../../contexts/ProfileContext/profile-context";
+
 const Topbar = () => {
   const [active, setActive] = useState(false);
+
+  //context
+  const [{ userImage }] = useContext(ProfileContext);
 
   const setActiveFunc = () => {
     setActive(true);
@@ -60,7 +66,7 @@ const Topbar = () => {
             <a>
               <div className={`${style.profile_box} overflow-hidden ml-3`}>
                 <img
-                  src="/assets/images/profile.jpg"
+                  src={userImage}
                   className={`w-100 h-100 ${style.profile_img}`}
                 />
               </div>

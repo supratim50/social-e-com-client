@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import SidenavIcon from "./SidenavIcon/SidenavIcon";
 import {
@@ -19,16 +20,32 @@ const Sidenav = ({ active }) => {
     >
       <div className="d-flex align-items-center justify-content-center">
         {active === "home" ? (
-          <SidenavIcon icon={<FaHome />} active />
+          <Link href="/">
+            <a>
+              <SidenavIcon icon={<FaHome />} active />
+            </a>
+          </Link>
         ) : (
-          <SidenavIcon icon={<FaHome />} />
+          <Link href="/">
+            <a>
+              <SidenavIcon icon={<FaHome />} />
+            </a>
+          </Link>
         )}
       </div>
       <div className="d-flex align-items-center justify-content-center">
         {active === "profile" ? (
-          <SidenavIcon icon={<FaUserFriends />} active />
+          <Link href="/profile">
+            <a>
+              <SidenavIcon icon={<FaUserFriends />} active />
+            </a>
+          </Link>
         ) : (
-          <SidenavIcon icon={<FaUserFriends />} />
+          <Link href="/profile">
+            <a>
+              <SidenavIcon icon={<FaUserFriends />} />
+            </a>
+          </Link>
         )}
       </div>
       <div className="d-flex align-items-center justify-content-center">

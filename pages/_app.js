@@ -5,7 +5,7 @@ import "../public/assets/css/bootstrap.css";
 import "../public/assets/css/global.css";
 
 // CONTEXTS
-import { Datalayer } from "../contexts/profile-context";
+import { Datalayer } from "../contexts/ProfileContext/profile-context";
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || DefaultLayout;

@@ -5,7 +5,7 @@ import Link from "next/link";
 // lAYOUTS
 import AuthLayout from "../components/Layouts/AuthLayout";
 // CONTEXTS
-import { ProfileContext } from "../contexts/profile-context";
+import { ProfileContext } from "../contexts/ProfileContext/profile-context";
 
 // COMPONENTS
 import RoundButton from "../components/Buttons/RoundButton/RoundButton";

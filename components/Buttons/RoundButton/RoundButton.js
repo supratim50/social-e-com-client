@@ -1,10 +1,11 @@
-const RoundButton = ({ icon, classList }) => {
+const RoundButton = ({ icon, classList, onClick }) => {
   return (
     <>
       <div
         className={`button shadow-sm rounded-circle bg-white d-flex justify-content-center align-items-center ${
           classList ? classList : ""
         }`}
+        onClick={onClick}
       >
         {icon && icon}
       </div>

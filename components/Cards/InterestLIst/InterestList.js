@@ -1,9 +1,19 @@
-const InterestList = ({ icon, text, classList, active }) => {
+import { useState } from "react";
+
+const InterestList = ({ icon, text, classList, onClick }) => {
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive(!active);
+    onClick();
+  };
+
   return (
     <div
       className={`list-view shadow-sm rounded-md bg-white py-2 px-4 d-flex justify-content-between align-items-center ${
         classList ? classList : ""
       } ${active ? "active" : ""}`}
+      onClick={handleClick}
     >
       <i className="icon primary-text d-flex align-items-center py-2">
         {icon && icon}

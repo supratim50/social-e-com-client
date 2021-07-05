@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import router, { useRouter } from "next/router";
+
+// COMPONENTS
 import AuthLayout from "../components/Layouts/AuthLayout";
 import InterestList from "../components/Cards/InterestLIst/InterestList";
 import RoundButton from "../components/Buttons/RoundButton/RoundButton";
@@ -16,10 +20,38 @@ import {
 } from "react-icons/fa";
 
 const Interests = () => {
+  const [interests, setInterests] = useState([]);
+
+  const route = useRouter();
+
+  // ----------- HANDLE INTEREST -------------
+  const handleInterest = (item) => {
+    const exist = interests.find((element) => element === item);
+
+    // INSERT INTO ARRAY
+    if (!exist) {
+      return setInterests([...interests, item]);
+    }
+
+    //  DELETE FROM THE ARRAY
+    const newInterests = interests.filter((element) => element !== item);
+    setInterests(newInterests);
+  };
+
+  // ----------- GOTO NEXT PAGE ------------
+  const nextPage = () => {
+    if (interests.length) {
+      router.push("/");
+      setInterests([]);
+    }
+  };
+
+  useEffect(() => {
+    console.log(interests);
+  }, [interests]);
+
   return (
     <>
-      {/* LOGO */}
-      <div className="logo">Social-e-com</div>
       {/* SECTION */}
       <section className="py-5">
         <div className="container p-4">
@@ -34,21 +66,25 @@ const Interests = () => {
                 classList="mb-4"
                 text="Grocery Items"
                 active
+                onClick={() => handleInterest("grocery")}
               />
               <InterestList
                 icon={<FaTshirt />}
                 classList="mb-4"
                 text="Fashion Item"
+                onClick={() => handleInterest("fashion")}
               />
               <InterestList
                 icon={<FaMobileAlt />}
                 classList="mb-4"
                 text="Mobiles"
+                onClick={() => handleInterest("mobiles")}
               />
               <InterestList
                 icon={<FaMagic />}
                 classList="mb-4"
                 text="Beauty Products"
+                onClick={() => handleInterest("beauty")}
               />
             </div>
             <div className="col-12 col-md-6 px-5">
@@ -56,21 +92,25 @@ const Interests = () => {
                 icon={<FaCouch />}
                 classList="mb-4 flex-row-reverse"
                 text="Furnitures"
+                onClick={() => handleInterest("furniture")}
               />
               <InterestList
                 icon={<FaSuitcase />}
                 classList="mb-4 flex-row-reverse"
                 text="Home Appliances"
+                onClick={() => handleInterest("homeappliance")}
               />
               <InterestList
                 icon={<FaLaptop />}
                 classList="mb-4 flex-row-reverse"
                 text="Electronic Devices"
+                onClick={() => handleInterest("electronics")}
               />
               <InterestList
                 icon={<FaBaby />}
                 classList="mb-4 flex-row-reverse"
                 text="Toys"
+                onClick={() => handleInterest("toys")}
               />
             </div>
           </div>
@@ -80,6 +120,7 @@ const Interests = () => {
           <RoundButton
             icon={<FaAngleRight />}
             classList="fixed-bottom-corner"
+            onClick={nextPage}
           />
         </div>
       </section>
@@ -88,21 +129,6 @@ const Interests = () => {
         section {
           height: 100vh;
           background-color: #f0f0f0;
-        }
-        .logo {
-          background-image: linear-gradient(
-            to right,
-            var(--primary-color) 8%,
-            var(--secondary-color)
-          );
-          font-size: 36px;
-          font-family: "Pattaya", sans-serif;
-          -webkit-background-clip: text;
-          color: transparent;
-
-          position: fixed;
-          top: 20px;
-          left: 20px;
         }
       `}</style>
     </>

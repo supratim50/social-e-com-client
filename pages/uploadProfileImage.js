@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 // lAYOUTS
 import AuthLayout from "../components/Layouts/AuthLayout";
@@ -45,7 +46,7 @@ const uploadProfileImage = () => {
   return (
     <section className="w-100 d-flex justify-content-center align-items-center">
       <div>
-        {/* IMAGES */}
+        {/* UPLOAD IMAGES */}
         <div className="image-outside-box d-flex justify-content-center align-items-center">
           <div className="image_box bg-white d-flex justify-content-center align-items-center">
             <div className="image overflow-hidden position-relative">
@@ -64,10 +65,14 @@ const uploadProfileImage = () => {
             </div>
           </div>
         </div>
-        {/* UPLOAD IMAGES */}
-        <div className="d-flex justify-content-center mt-5">
-          <RoundButton icon={<FaAngleRight />} />
-        </div>
+        {/* REDIRECT PAGE */}
+        <Link href="/interests">
+          <a>
+            <div className="d-flex justify-content-center mt-5">
+              <RoundButton icon={<FaAngleRight />} />
+            </div>
+          </a>
+        </Link>
       </div>
 
       <style jsx>{`

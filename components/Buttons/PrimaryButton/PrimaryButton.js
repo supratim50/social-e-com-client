@@ -1,9 +1,9 @@
-const PrimaryButton = ({ text, registerFunc }) => {
+const PrimaryButton = ({ text, onClickFunction }) => {
   return (
     <>
       <div
         className="button w-100 d-flex justify-content-center align-items-center py-3 px-5 paragraph-sm text-white mx-auto"
-        onClick={registerFunc}
+        onClick={onClickFunction}
       >
         {text && text}
       </div>

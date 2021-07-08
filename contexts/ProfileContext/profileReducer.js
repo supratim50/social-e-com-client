@@ -7,7 +7,7 @@ export const initialState = {
 
 export const profileReducer = (state, action) => {
   switch (action.type) {
-    case "SET-PROFILE":
+    case "SET-INFORMATION":
       return {
         ...state,
         userName: action.name,
@@ -17,6 +17,14 @@ export const profileReducer = (state, action) => {
     case "SET-IMAGE":
       return {
         ...state,
+        userImage: action.userImage,
+      };
+    case "SET-PROFILE":
+      return {
+        ...state,
+        userName: action.name,
+        userEmail: action.email,
+        token: action.token,
         userImage: action.userImage,
       };
   }

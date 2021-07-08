@@ -58,7 +58,7 @@ const Signup = () => {
       });
 
       dispatch({
-        type: "SET-PROFILE",
+        type: "SET-INFORMATION",
         name: data.user.name,
         email: data.user.email,
         token: data.token,
@@ -106,7 +106,7 @@ const Signup = () => {
           </a>
         </Link>
         {/* button */}
-        <PrimaryBtn text="Sign up" registerFunc={registrationFunc} />
+        <PrimaryBtn text="Sign up" onClickFunction={registrationFunc} />
       </div>
 
       <style jsx>{`

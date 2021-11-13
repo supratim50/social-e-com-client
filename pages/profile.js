@@ -12,7 +12,10 @@ import Sidenav from "../components/Navbar/Sidenav/Sidenav";
 // CONTEXT
 import { ProfileContext } from "../contexts/ProfileContext/profile-context";
 
-// followers component
+//API
+import { getPostsbyEmail } from "../api/getPostsByEmail";
+
+// counting component
 const Counting = ({ number, text }) => {
   return (
     <div className="d-flex flex-column justify-content-between align-items-center">
@@ -27,7 +30,6 @@ const Counting = ({ number, text }) => {
 // profile
 const profile = () => {
   const [posts, setPosts] = useState([]);
-  const [user, setUser] = useState({});
   const [show, setShow] = useState(false);
   const [authenticate, setAuthenticate] = useState(false);
 
@@ -58,6 +60,7 @@ const profile = () => {
   useEffect(() => {
     getAuth();
     getPosts();
+    // getPostsbyEmail(state.userEmail);
   }, []);
 
   return (
@@ -80,27 +83,15 @@ const profile = () => {
                 <div className="w-100 mt-1 row mx-auto">
                   {/* POST GET DATA */}
                   {posts.map(({ images, title, userEmail }) => {
-                    // console.log(likes, images, title, _id);
-
-                    // getProfile(userID);
-                    axios
-                      .get(`${ENDPOINT}/user/${state.userEmail}`)
-                      .then(({ data }) => {
-                        setUser(data);
-                      })
-                      .catch((err) => {
-                        console.log(err);
-                      });
-
                     return (
                       <div className="col-4 px-1 mt-2">
                         <SmallCard
                           // key={_id}
-                          name={user.name}
+                          name={state.userName}
                           date="12 hours ago"
                           profileImage={
-                            user.userImage
-                              ? user.userImage
+                            state.userImage
+                              ? state.userImage
                               : "/assets/images/defaultProfile.jpg"
                           }
                           images={images}
